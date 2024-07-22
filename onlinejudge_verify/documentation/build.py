@@ -77,7 +77,8 @@ def _render_source_code_stat(
             stat.path, basedir=basedir, options={"include_paths": [basedir]}
         ).decode()
     except Exception:
-        logger.warning("failed to bundle: %s", str(stat.path))
+        # Pythonで機能未実装のため一時的にログ削除
+        # logger.warning("failed to bundle: %s", str(stat.path))
         bundled_code = traceback.format_exc()
     return {
         "path": str(stat.path),
